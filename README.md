@@ -128,6 +128,31 @@ pip3 install -U gdown
 pip3 install --pre --extra-index-url https://developer.download.nvidia.com/compute/redist/jp/v45 tensorflow==2.5
 ```
 
+### Running driver.py
+This seemed quite an issue because the jetson nano only allows python version 3.6 and the packages we used require python 3.8
+The solution was using a virtual env with python3.8 installed on it and when running commands use:
+
+"myenv" is the name of the virtual env
+```bash
+sudo ./myenv/bin/python3.8 ./driver.py
+```
+
+If this doesn't work it will probably show you that certain packages are missing which you will have to install using
+
+```bash
+pip install
+```
+
+You can also see the installed packages with their version using
+  
+```bash
+pip list
+```
+
+### Problem with camera detection
+The camera is not being detected when running driver.py
+
+
 ## Setup bluetooth connection to the PS4 controller:
 
 ## Setup Nano Car 4GB:
