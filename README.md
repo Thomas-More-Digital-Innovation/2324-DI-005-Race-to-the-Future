@@ -51,6 +51,7 @@ https://developer.nvidia.com/embedded/l4t/r32_release_v5.1/r32_release_v5.1/jest
 4. Update the system.
 
 ### SSH Connection:
+You need to be connected to the Dino IoT network to be able to SSH to the Nano.
 
 Login: nanorc2
 Password: Dino1234
