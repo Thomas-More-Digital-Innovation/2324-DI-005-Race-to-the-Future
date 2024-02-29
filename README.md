@@ -149,8 +149,42 @@ You can also see the installed packages with their version using
 pip list
 ```
 
+To exit a virtual env use
+
+```bash
+deactivate
+```
+
 ### Problem with camera detection
 The camera is not being detected when running driver.py
+
+We used the following github repo documentation to check the camera and got a result when running direct bash commands from this repo:
+https://github.com/JetsonHacksNano/CSI-Camera?tab=readme-ov-file
+
+But when running the same in a python script it didn't work. It shows "Unable to open camera" which usually means the OpenCV version or installation is something wrong.
+
+We checked the opencv version using this inline bash script:
+  
+```bash
+python -c "import cv2; print(cv2.__version__)"
+
+```
+
+It showed a correct up to date version (4.5.3) but still the camera was not being detected.
+
+This usually means that the CUDA support inside of openCV is missing, we checked this using the following command:
+  
+```bash
+python -c "import cv2; print(cv2.cuda.getCudaEnabledDeviceCount())"
+```
+
+This showed 0 which means that the CUDA support is not enabled.
+
+We tried to fix this by reinstalling openCV with CUDA support using the following command:
+
+```bash
+
+```
 
 
 ## Setup bluetooth connection to the PS4 controller:
