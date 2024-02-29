@@ -186,6 +186,15 @@ We tried to fix this by reinstalling openCV with CUDA support using the followin
 
 ```
 
+To debug the opencv cuda errors, we installed jtop which stands for jetson stats:
+https://github.com/rbonghi/jetson_stats
+
+Command to install:
+
+```bash
+sudo pip3 install -U jetson-stats
+```
+
 
 ## Setup bluetooth connection to the PS4 controller:
 
