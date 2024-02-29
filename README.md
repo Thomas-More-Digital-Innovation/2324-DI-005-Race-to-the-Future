@@ -196,6 +196,43 @@ Command to install:
 sudo pip3 install -U jetson-stats
 ```
 
+We deleted the swap file and created a new one with 12GB of space.
+We did this by first toggling the swap file off and then deleting it using the following commands:
+
+The location of the swap file is probably different.
+
+```bash
+sudo swapoff /var/swapfile
+sudo rm /var/swapfile
+```
+
+We then followed this guide to install/update OpenCV:
+https://qengineering.eu/install-opencv-on-jetson-nano.html
+
+We installed opencv version 4.8.0
+
+Important this will take approximately 3.5 hours to install.
+
+```bash
+# check your memory first
+$ free -m
+# you need at least a total of 8.5 GB!
+# if not, enlarge your swap space as explained in the guide
+$ wget https://github.com/Qengineering/Install-OpenCV-Jetson-Nano/raw/main/OpenCV-4-8-0.sh
+$ sudo chmod 755 ./OpenCV-4-8-0.sh
+$ ./OpenCV-4-8-0.sh
+# once the installation is done...
+$ rm OpenCV-4-8-0.sh
+# remove the dphys-swapfile now
+$ sudo /etc/init.d/dphys-swapfile stop
+$ sudo apt-get remove --purge dphys-swapfile
+# just a tip to save an additional 275 MB
+$ sudo rm -rf ~/opencv
+$ sudo rm -rf ~/opencv_contrib
+```
+
+Afterwards we installed the cuda support for opencv using the following:
+
 
 ## Setup bluetooth connection to the PS4 controller:
 
