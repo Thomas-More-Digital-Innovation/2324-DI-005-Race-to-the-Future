@@ -1,0 +1,9 @@
+autopep8
+evdev
+grpcio
+grpcio-tools
+protobuf
+Jetson.GPIO
+adafruit-circuitpython-pca9685
+adafruit-circuitpython-servokit
+numpy

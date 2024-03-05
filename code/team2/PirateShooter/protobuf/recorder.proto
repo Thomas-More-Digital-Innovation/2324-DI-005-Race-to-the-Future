@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package pirateshooter.recorder;
+
+import "google/protobuf/timestamp.proto";
+
+service RecorderService {
+    rpc SendDataPoint (SendDataPointRequest) returns (SendDataPointResponse);
+}
+
+message SendDataPointRequest {
+    google.protobuf.Timestamp timestamp = 1;
+    float steering_angle = 2;
+    float wheel_speed = 3;
+    bytes image = 4;
+}
+
+message SendDataPointResponse {}
