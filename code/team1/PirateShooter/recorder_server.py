@@ -14,7 +14,9 @@ import cv2
 from recorder.proto import recorder_pb2, recorder_pb2_grpc
 from recorder.model.datapoint import DataPoint
 
-OUTPUT_FILE = "datapoints/datapoints_{timestamp}_{slice}.pickle"
+# linux werkt een relatief pad
+# voor windows werkt alleen een absoluut pad
+OUTPUT_FILE = "C:/_repos_/2324-DI-005-Race-to-the-Future/code/team1/PirateShooter/datapoints/datapoints_{timestamp}_{slice}.pickle"
 
 dump = True
 datapoints: List[DataPoint] = []
