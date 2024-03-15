@@ -1,8 +1,8 @@
+#!/usr/bin/env python3
 import os
 import pickle
 import cv2
 import platform
-import numpy as np
 
 from recorder.model.datapoint import DataPoint
 
@@ -23,15 +23,13 @@ for file in os.listdir(base_dir):
                 
                 # Iterate over each DataPoint in the list
                 for datapoint in datapoints:
+                    print(type(datapoint.image))
                     # Process the DataPoint object
                     if isinstance(datapoint, DataPoint):
-                        # Decode bytes to image
-                        nparr = np.frombuffer(datapoint.image, np.uint8)
-                        img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
-                        
-                        # Write the image to disk
-                        cv2.imwrite(f"img_{datapoint.timestamp}.png", img)
+                        # Write the image to disk (assuming datapoint.image is a valid image)
+                        cv2.imwrite(f"img_{datapoint.timestamp}.png", datapoint.image)
                     else:
                         print(f"Invalid datapoint in {file}: {type(datapoint)}")
             except Exception as e:
                 print(f"Error loading pickle {file}: {e}")
+    
