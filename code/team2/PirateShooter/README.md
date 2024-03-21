@@ -47,9 +47,15 @@ Bryan
     ```bash
     pip install -r requirements.txt
     ```
-12. Connect the camera to the Jetson Nano board in the CSI slot
-13. Connect the PS4 controller by bluetooth
-14. Find out to which input the PS4 controller is connected:
+
+12. If the install gets stuck or takes a long time on grcpio-tools you need to update your pip version:
+    ```bash
+    pip install --upgrade pip
+    ```
+    And then run the pip install -r requirements.txt again
+13. Connect the camera to the Jetson Nano board in the CSI slot
+14. Connect the PS4 controller by bluetooth
+15. Find out to which input the PS4 controller is connected:
     ```bash
     ls /dev/input/
     ```
@@ -57,15 +63,15 @@ Bryan
     ```bash
     cat /proc/bus/input/devices
     ```
-15. Install evdev if not already installed to debug
+16. Install evdev if not already installed to debug
     ```bash
     sudo apt-get install python3-evdev
     ```
-16. Edit the evdev_debug.py file to the correct input number
+17. Edit the evdev_debug.py file to the correct input number
     ```bash
     sudo nano evdev_debug.py
     ```
-17. Edit the file you are using either driver.py or recorder_client.py or recorder_standalone.py to the correct input number
+18. Edit the file you are using either driver.py or recorder_client.py or recorder_standalone.py to the correct input number
     ```bash
     sudo nano driver.py
     ```
