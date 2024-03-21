@@ -10,7 +10,6 @@ from recorder.model.datapoint import DataPoint
 
 OUTPUT_FILE = "datapoints/datapoint_{id}.pickle"
 
-
 def callback(latest_timestamp: float, latest_steering_input: float, latest_wheel_input: float, latest_image: Any):
     # print(latest_timestamp, latest_steering_input, latest_wheel_input)
 
