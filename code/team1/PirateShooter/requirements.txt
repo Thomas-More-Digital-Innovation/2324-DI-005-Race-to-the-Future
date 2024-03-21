@@ -8,3 +8,7 @@ adafruit-circuitpython-pca9685
 adafruit-circuitpython-servokit
 numpy
 opencv-python
+google-api-core==2.14.0
+google-api-python-client==2.109.0
+google-pasta==0.2.0
+googleapis-common-protos==1.61.0
