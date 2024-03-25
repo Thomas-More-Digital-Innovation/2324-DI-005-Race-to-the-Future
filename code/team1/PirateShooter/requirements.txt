@@ -1,9 +1,10 @@
 autopep8
 evdev
 grpcio
-grpcio-tools
-protobuf
+grpcio-tools==1.34.0
+protobuf # for grpc
 Jetson.GPIO
 adafruit-circuitpython-pca9685
 adafruit-circuitpython-servokit
 numpy
+opencv-python
