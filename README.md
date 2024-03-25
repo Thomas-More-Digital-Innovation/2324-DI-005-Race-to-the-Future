@@ -55,11 +55,12 @@ You need to be connected to the Dino IoT network to be able to SSH to the Nano.
 
 Login: nanorc2
 Password: Dino1234
-- SSH to the Nano using the following command:
+- SSH to the Nano using the following command depending on your team:
     ```bash
-    ssh nanorc2@nanorc2-desktop
+    ssh jetson@rttf1
+    ssh jetson@rttf2
     ```
-- Password for SSH: **Dino1234**.
+- Password for SSH: **jetson**.
 
 ### Follow the donkeycar documentation to update the Nano:
 Remove Libre Office:
