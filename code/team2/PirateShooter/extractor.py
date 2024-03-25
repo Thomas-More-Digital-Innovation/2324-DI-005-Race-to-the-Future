@@ -11,7 +11,7 @@ from recorder.model.datapoint import DataPoint
 is_windows = platform.system() == "Windows"
 
 # Define the base directory
-base_dir = "./datapoints" if not is_windows else r"C:\Users\bryan\Desktop\TM2023-2024\DI\2324-DI-005-Race-to-the-Future\code\team2\PirateShooter"
+base_dir = "./datapoints" if not is_windows else r"C:\Users\bryan\Desktop\TM2023-2024\DI\2324-DI-005-Race-to-the-Future\code\team2\PirateShooter\datapoints"
 
 # Loop through each file in the directory
 for file in os.listdir(base_dir):
@@ -27,7 +27,7 @@ for file in os.listdir(base_dir):
                     # Process the DataPoint object
                     if isinstance(datapoint, DataPoint):
                         # Write the image to disk (assuming datapoint.image is a valid image)
-                        cv2.imwrite(f"img_{datapoint.timestamp}.png", datapoint.image)
+                        cv2.imwrite(f"./extracted/img_{datapoint.timestamp}.png", datapoint.image)
                     else:
                         print(f"Invalid datapoint in {file}: {type(datapoint)}")
             except Exception as e:
