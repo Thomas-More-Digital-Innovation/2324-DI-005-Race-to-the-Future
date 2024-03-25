@@ -5,7 +5,7 @@ import evdev
 # for device in devices:
 #     print(device.path, device.name, device.phys)
 
-device = evdev.InputDevice('/dev/input/event2')
+device = evdev.InputDevice('/dev/input/event4')
 print(device)
 
 print(device.capabilities(verbose=True))
