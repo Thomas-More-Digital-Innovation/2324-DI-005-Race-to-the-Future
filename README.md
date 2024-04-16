@@ -249,3 +249,8 @@ https://developer.nvidia.com/embedded/l4t/r32_release_v5.1/r32_release_v5.1/jest
 2. Insert the SD card into the Nano
 3. Connect a monitor, keyboard and mouse to the Nano.
 4. Power the Nano on and it should start the boot process
+
+### Data gathering
+1. python manage.py drive --js -> to drive
+2. bash reset_data.sh -> deletes all data from capture session
+3. bash compress_data.sh -> compresses the mycar repo into zip file
