@@ -28,8 +28,8 @@ def callback_controls(latest_steering_input: float, latest_wheel_input: float, s
 
     # Speed limiter
     # 110 = dead slow 120 = slow 135 = normal 180 = no limit - not recommended > see pictures
-    if wheel_angle > 120:
-        wheel_angle = 120
+    if wheel_angle > 160:
+        wheel_angle = 160
 
     if wheel_angle < 45:
         wheel_angle = 45
